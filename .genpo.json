@@ -1,0 +1,11 @@
+{
+  "defaults": {
+    "outputDir": "e2e/pages",
+    "scope": "body",
+    "rendered": false,
+    "maxElements": 200,
+    "dedupe": true,
+    "storageState": "e2e/.auth/admin.json",
+    "logLevel": "info"
+  }
+}

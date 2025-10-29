@@ -1,0 +1,21 @@
+{
+  "requiredFolders": [
+    "src",
+    "src/web",
+    "src/api",
+    "src/mobile",
+    "src/db",
+    "docs",
+    "tests"
+  ],
+  "requiredScripts": [
+    "test:web",
+    "test:api",
+    "test:mobile",
+    "qa:init",
+    "qa:lint",
+    "qa:validate",
+    "qa:report"
+  ],
+  "commitPrefixes": ["feat", "fix", "docs", "refactor", "test", "chore"]
+}

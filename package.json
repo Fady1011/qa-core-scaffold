@@ -1,0 +1,117 @@
+{
+  "name": "@yourorg/qa-core",
+  "version": "0.1.0",
+  "description": "Reusable QA automation scaffold library for web, API, and mobile projects",
+  "keywords": [
+    "qa",
+    "automation",
+    "playwright",
+    "appium",
+    "webdriverio",
+    "testing",
+    "scaffold"
+  ],
+  "license": "MIT",
+  "author": "Your Org QA Guild",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./governance": "./src/governance",
+    "./cli": "./dist/cli/index.js",
+    "./web": "./dist/web/index.js",
+    "./api": "./dist/api/index.js",
+    "./mobile": "./dist/mobile/index.js",
+    "./db": "./dist/db/index.js",
+    "./utils": "./dist/utils/index.js"
+  },
+  "bin": {
+    "qa": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "templates",
+    "src/governance",
+    ".genpo.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepare": "husky install",
+    "lint": "eslint \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "test:web": "playwright test tests/example-playwright.test.ts --config=src/web/playwright.config.ts",
+    "test:api": "playwright test tests/api.playwright.spec.ts --config=src/web/playwright.config.ts",
+    "test:mobile": "wdio run src/mobile/appium.config.ts",
+    "qa:init": "ts-node src/cli/index.ts create-project",
+    "qa:validate": "ts-node src/cli/index.ts validate",
+    "qa:lint": "ts-node src/cli/index.ts lint",
+    "qa:report": "ts-node src/utils/reporter.ts",
+    "qa:db:check": "ts-node src/cli/index.ts db:check",
+    "qa:generate-po": "ts-node src/cli/index.ts generate-page-object"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.47.2",
+    "@wdio/allure-reporter": "^8.40.8",
+    "@wdio/appium-service": "^8.40.8",
+    "@wdio/cli": "^8.40.8",
+    "@wdio/local-runner": "^8.40.8",
+    "cheerio": "^1.0.0-rc.12",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^2.1.1",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.0.0",
+    "appium": "^2.12.1",
+    "axios": "^1.7.7",
+    "@faker-js/faker": "^9.0.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.11.3",
+    "pg": "^8.12.0",
+    "mssql": "^11.0.1",
+    "pino": "^9.4.0",
+    "playwright": "^1.47.2",
+    "reflect-metadata": "^0.2.2",
+    "tslib": "^2.8.1",
+    "webdriverio": "^8.40.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.13.0",
+    "globals": "^14.0.0",
+    "@types/node": "^22.5.2",
+    "@types/mssql": "^9.1.6",
+    "@types/pg": "^8.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --edit $1"
+    }
+  }
+}

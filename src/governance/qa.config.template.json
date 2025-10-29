@@ -1,0 +1,26 @@
+{
+  "project": {
+    "name": "sample-automation-project",
+    "type": "web",
+    "owners": ["qa-team@yourorg.com"],
+    "environments": ["dev", "qa", "prod"]
+  },
+  "testing": {
+    "web": {
+      "framework": "playwright",
+      "baseUrl": "https://example.com"
+    },
+    "api": {
+      "baseUrl": "https://api.example.com"
+    },
+    "mobile": {
+      "platform": "android",
+      "appPath": "./apps/sample.apk"
+    }
+  },
+  "governance": {
+    "branching": "docs/branching-strategy.md",
+    "codingStandards": "docs/coding-standards.md",
+    "ciTemplate": "docs/ci-template.md"
+  }
+}
