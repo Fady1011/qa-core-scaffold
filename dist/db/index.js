@@ -6,5 +6,6 @@ export * from "./dbQueries/courseQueries";
 export * from "./adapters/mysqlAdapter";
 export * from "./adapters/postgresAdapter";
 export * from "./adapters/mssqlAdapter";
+export * from "./adapters/mockAdapter";
 export * from "./types/dbTypes";
 //# sourceMappingURL=index.js.map

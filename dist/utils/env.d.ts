@@ -1,4 +1,4 @@
-export type QaEnvProfile = "dev" | "qa" | "prod";
+export type QaEnvProfile = "demo" | "dev" | "stage" | "qa" | "prod";
 export declare function loadEnv(profile?: QaEnvProfile | string): NodeJS.ProcessEnv;
 export declare function requireEnvKeys(keys: string[], profile?: QaEnvProfile | string): void;
 export interface QaEnvConfig {
@@ -26,5 +26,9 @@ export interface QaEnvConfig {
         pass: string;
     };
 }
-export declare function getQaEnvConfig(profile?: QaEnvProfile | string): QaEnvConfig;
+interface QaEnvOptions {
+    requireKeys?: boolean;
+}
+export declare function getQaEnvConfig(profile?: QaEnvProfile | string, options?: QaEnvOptions): QaEnvConfig;
 export declare function resetEnvCache(): void;
+export {};

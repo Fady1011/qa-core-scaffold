@@ -1,7 +1,7 @@
 import { expect } from "@wdio/globals";
 import { BaseMobileTest } from "../../src/mobile/baseMobileTest";
 
-describe.skip("Mobile smoke", () => {
+describe("Mobile smoke", () => {
   const base = new (class extends BaseMobileTest {})();
 
   it("captures onboarding screenshot", async () => {

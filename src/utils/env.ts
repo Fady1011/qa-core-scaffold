@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { config } from "dotenv";
-export type QaEnvProfile = "dev" | "qa" | "prod";
+export type QaEnvProfile = "demo" | "dev" | "stage" | "qa" | "prod";
 
 const REQUIRED_COMMON_KEYS = [
   "BASE_URL",
@@ -27,7 +27,7 @@ function resolveEnvFiles(profile: string): string[] {
 }
 
 export function loadEnv(
-  profile: QaEnvProfile | string = process.env.QA_PROFILE ?? "dev"
+  profile: QaEnvProfile | string = process.env.QA_ENV ?? process.env.QA_PROFILE ?? "dev"
 ): NodeJS.ProcessEnv {
   if (loadedProfile === profile) {
     return process.env;
@@ -78,18 +78,27 @@ export interface QaEnvConfig {
   };
 }
 
-export function getQaEnvConfig(profile?: QaEnvProfile | string): QaEnvConfig {
+interface QaEnvOptions {
+  requireKeys?: boolean;
+}
+
+export function getQaEnvConfig(
+  profile?: QaEnvProfile | string,
+  options?: QaEnvOptions
+): QaEnvConfig {
   const env = loadEnv(profile);
-  requireEnvKeys(REQUIRED_COMMON_KEYS, profile);
+  if (options?.requireKeys) {
+    requireEnvKeys(REQUIRED_COMMON_KEYS, profile);
+  }
 
   return {
-    profile: (profile ?? env.QA_PROFILE ?? "dev").toString(),
+    profile: (profile ?? env.QA_ENV ?? env.QA_PROFILE ?? "dev").toString(),
     web: {
-      baseUrl: env.BASE_URL ?? "",
+      baseUrl: env.BASE_URL ?? "https://playwright.dev",
       browser: env.BROWSER ?? "chromium"
     },
     api: {
-      baseUrl: env.API_BASE_URL ?? "",
+      baseUrl: env.API_BASE_URL ?? "https://jsonplaceholder.typicode.com",
       token: env.API_TOKEN
     },
     mobile: {

@@ -49,5 +49,9 @@ Override any default at run-time via CLI flags (e.g. `--no-dedupe`, `--max 50`, 
 2. Run `npm run build`.
 3. Publish with `npm publish --access public`.
 
+## Getting started
+- Quick copy/paste onboarding and demo scripts: `docs/quickstart.md`.
+- Role guides: `docs/getting-started-junior.md`, `docs/journeyman.md`, `docs/senior.md`.
+
 ## License
 MIT

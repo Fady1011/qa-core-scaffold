@@ -54,7 +54,11 @@
     "qa:lint": "ts-node src/cli/index.ts lint",
     "qa:report": "ts-node src/utils/reporter.ts",
     "qa:db:check": "ts-node src/cli/index.ts db:check",
-    "qa:generate-po": "ts-node src/cli/index.ts generate-page-object"
+    "qa:generate-po": "ts-node src/cli/index.ts generate-page-object",
+    "demo:web": "cross-env QA_ENV=demo npm run test:web -- --project=chromium",
+    "demo:api": "cross-env QA_ENV=demo npm run test:api",
+    "demo:mobile": "cross-env QA_ENV=demo npm run test:mobile",
+    "demo:db": "cross-env QA_ENV=demo playwright test tests/db.playwright.spec.ts --config=src/web/playwright.config.ts"
   },
   "dependencies": {
     "@playwright/test": "^1.47.2",
@@ -98,6 +102,7 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
+    "cross-env": "^7.0.3",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3"

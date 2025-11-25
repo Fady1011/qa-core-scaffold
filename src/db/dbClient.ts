@@ -1,4 +1,5 @@
 import { getQaEnvConfig } from "../utils/env";
+import { MockAdapter } from "./adapters/mockAdapter";
 import { MySqlAdapter } from "./adapters/mysqlAdapter";
 import { MsSqlAdapter } from "./adapters/mssqlAdapter";
 import { PostgresAdapter } from "./adapters/postgresAdapter";
@@ -12,6 +13,8 @@ import type {
 
 function createAdapter(config: DatabaseConfig): DatabaseAdapter {
   switch (config.type) {
+    case "mock":
+      return new MockAdapter(config);
     case "mysql":
       return new MySqlAdapter(config);
     case "postgres":

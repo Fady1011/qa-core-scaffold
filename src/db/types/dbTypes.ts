@@ -1,4 +1,4 @@
-export type SupportedDatabase = "mysql" | "postgres" | "mssql";
+export type SupportedDatabase = "mysql" | "postgres" | "mssql" | "mock";
 
 export interface DatabaseConfig {
   type: SupportedDatabase;

@@ -19,7 +19,7 @@ let loadedProfile = null;
 function resolveEnvFiles(profile) {
     return [`.env.${profile}.local`, `.env.${profile}`, `.env.local`, `.env`].map((candidate) => path.resolve(process.cwd(), candidate));
 }
-export function loadEnv(profile = process.env.QA_PROFILE ?? "dev") {
+export function loadEnv(profile = process.env.QA_ENV ?? process.env.QA_PROFILE ?? "dev") {
     if (loadedProfile === profile) {
         return process.env;
     }
@@ -38,17 +38,19 @@ export function requireEnvKeys(keys, profile) {
         throw new Error(`Missing required environment variables: ${missing.join(", ")}`);
     }
 }
-export function getQaEnvConfig(profile) {
+export function getQaEnvConfig(profile, options) {
     const env = loadEnv(profile);
-    requireEnvKeys(REQUIRED_COMMON_KEYS, profile);
+    if (options?.requireKeys) {
+        requireEnvKeys(REQUIRED_COMMON_KEYS, profile);
+    }
     return {
-        profile: (profile ?? env.QA_PROFILE ?? "dev").toString(),
+        profile: (profile ?? env.QA_ENV ?? env.QA_PROFILE ?? "dev").toString(),
         web: {
-            baseUrl: env.BASE_URL ?? "",
+            baseUrl: env.BASE_URL ?? "https://playwright.dev",
             browser: env.BROWSER ?? "chromium"
         },
         api: {
-            baseUrl: env.API_BASE_URL ?? "",
+            baseUrl: env.API_BASE_URL ?? "https://jsonplaceholder.typicode.com",
             token: env.API_TOKEN
         },
         mobile: {
