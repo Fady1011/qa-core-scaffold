@@ -32,6 +32,10 @@
   "bin": {
     "qa": "dist/cli/index.js"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "files": [
     "dist",
     "docs",
