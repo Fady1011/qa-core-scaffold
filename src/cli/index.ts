@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import { buildCreateProjectCommand } from "./create-project";
-import { buildValidateCommand } from "./validate-structure";
-import { buildQaLintCommand } from "./qa-lint";
-import { buildDbCheckCommand } from "./db-check";
-import { buildGeneratePageObjectCommand } from "./generate-page-object";
+import { buildCreateProjectCommand } from "./create-project.js";
+import { buildValidateCommand } from "./validate-structure.js";
+import { buildQaLintCommand } from "./qa-lint.js";
+import { buildDbCheckCommand } from "./db-check.js";
+import { buildGeneratePageObjectCommand } from "./generate-page-object.js";
 
 const program = new Command();
 

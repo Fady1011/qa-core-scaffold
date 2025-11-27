@@ -1,6 +1,6 @@
 import type { Options } from "@wdio/types";
 import path from "path";
-import { getQaEnvConfig } from "../utils/env";
+import { getQaEnvConfig } from "../utils/env.js";
 
 const env = getQaEnvConfig();
 

@@ -3,7 +3,7 @@ import type { LevelWithSilent } from "pino";
 import {
   runGeneratePageObjectFromCli,
   type GeneratePageObjectCliOptions
-} from "../utils/generatePageObject";
+} from "../utils/generatePageObject.js";
 
 function parseLogLevel(value: string): LevelWithSilent {
   const lowered = value.toLowerCase();

@@ -1,7 +1,7 @@
 import fs from "fs";
 import { mkdir, cp, writeFile } from "fs/promises";
 import path from "path";
-import { logger } from "./logger";
+import { logger } from "./logger.js";
 
 export async function ensureDir(dirPath: string) {
   await mkdir(dirPath, { recursive: true });

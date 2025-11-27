@@ -1,5 +1,5 @@
 import sql from "mssql";
-import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes";
+import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes.js";
 
 const SUPPORTED_VALUE_TYPES = ["string", "number", "boolean"] as const;
 

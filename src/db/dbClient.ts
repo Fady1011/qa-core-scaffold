@@ -1,15 +1,15 @@
-import { getQaEnvConfig } from "../utils/env";
-import { MockAdapter } from "./adapters/mockAdapter";
-import { MySqlAdapter } from "./adapters/mysqlAdapter";
-import { MsSqlAdapter } from "./adapters/mssqlAdapter";
-import { PostgresAdapter } from "./adapters/postgresAdapter";
+import { getQaEnvConfig } from "../utils/env.js";
+import { MockAdapter } from "./adapters/mockAdapter.js";
+import { MySqlAdapter } from "./adapters/mysqlAdapter.js";
+import { MsSqlAdapter } from "./adapters/mssqlAdapter.js";
+import { PostgresAdapter } from "./adapters/postgresAdapter.js";
 import type {
   DatabaseAdapter,
   DatabaseConfig,
   QueryParams,
   QueryResult,
   SupportedDatabase
-} from "./types/dbTypes";
+} from "./types/dbTypes.js";
 
 function createAdapter(config: DatabaseConfig): DatabaseAdapter {
   switch (config.type) {

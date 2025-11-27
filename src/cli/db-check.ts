@@ -1,8 +1,8 @@
 import { Command } from "commander";
-import { DBClient } from "../db/dbClient";
-import type { SupportedDatabase } from "../db/types/dbTypes";
-import { getQaEnvConfig } from "../utils/env";
-import { logger } from "../utils/logger";
+import { DBClient } from "../db/dbClient.js";
+import type { SupportedDatabase } from "../db/types/dbTypes.js";
+import { getQaEnvConfig } from "../utils/env.js";
+import { logger } from "../utils/logger.js";
 
 export function buildDbCheckCommand() {
   const command = new Command("db:check");

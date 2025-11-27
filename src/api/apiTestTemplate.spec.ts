@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { ApiClient } from "./apiClient";
-import { SchemaValidator } from "./schemaValidator";
+import { ApiClient } from "./apiClient.js";
+import { SchemaValidator } from "./schemaValidator.js";
 
 const validator = new SchemaValidator();
 

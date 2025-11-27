@@ -2,7 +2,7 @@ import { Command } from "commander";
 import { existsSync, mkdirSync } from "fs";
 import path from "path";
 import allure from "allure-commandline";
-import { logger } from "./logger";
+import { logger } from "./logger.js";
 
 export interface ReportOptions {
   resultsDir?: string;

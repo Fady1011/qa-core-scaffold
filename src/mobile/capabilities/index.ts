@@ -1,2 +1,2 @@
-export * from "./android";
-export * from "./ios";
+export * from "./android.js";
+export * from "./ios.js";

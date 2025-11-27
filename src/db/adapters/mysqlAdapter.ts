@@ -1,5 +1,5 @@
 import mysql, { Pool, type RowDataPacket } from "mysql2/promise";
-import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes";
+import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes.js";
 
 export class MySqlAdapter implements DatabaseAdapter {
   private pool: Pool;

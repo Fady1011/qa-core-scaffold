@@ -1,6 +1,6 @@
 {
-  "name": "@yourorg/qa-core",
-  "version": "0.1.0",
+  "name": "@fady1011/qa-core",
+  "version": "0.3.2",
   "description": "Reusable QA automation scaffold library for web, API, and mobile projects",
   "keywords": [
     "qa",
@@ -33,8 +33,7 @@
     "qa": "dist/cli/index.js"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public"
   },
   "files": [
     "dist",
@@ -48,6 +47,7 @@
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.json",
     "prepare": "husky install",
+    "prepublishOnly": "npm run build",
     "lint": "eslint \"src/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\"",
     "test:web": "playwright test tests/example-playwright.test.ts --config=src/web/playwright.config.ts",

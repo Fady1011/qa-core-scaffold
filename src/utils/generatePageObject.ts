@@ -6,8 +6,8 @@ import { load } from "cheerio";
 import type { Cheerio, CheerioAPI } from "cheerio";
 import type { AnyNode, Element as DomElement, ChildNode } from "domhandler";
 import type { LevelWithSilent } from "pino";
-import { loadEnv } from "./env";
-import { createScopedLogger } from "./logger";
+import { loadEnv } from "./env.js";
+import { createScopedLogger } from "./logger.js";
 
 const DEFAULT_OUTPUT_DIR = "e2e/pages";
 const DEFAULT_SCOPE = "body";

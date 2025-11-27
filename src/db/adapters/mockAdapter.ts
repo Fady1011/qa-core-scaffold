@@ -1,4 +1,4 @@
-import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes";
+import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes.js";
 
 const demoUsers = [
   { id: 1, first_name: "Ada", last_name: "Lovelace", email: "ada@example.test", role: "admin" },

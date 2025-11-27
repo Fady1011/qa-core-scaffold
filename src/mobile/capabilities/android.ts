@@ -1,4 +1,4 @@
-import { getQaEnvConfig } from "../../utils/env";
+import { getQaEnvConfig } from "../../utils/env.js";
 
 export function androidCapabilities() {
   const env = getQaEnvConfig();

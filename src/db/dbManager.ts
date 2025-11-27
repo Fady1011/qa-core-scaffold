@@ -1,5 +1,5 @@
-import { DBClient } from "./dbClient";
-import type { QueryParams, QueryResult } from "./types/dbTypes";
+import { DBClient } from "./dbClient.js";
+import type { QueryParams, QueryResult } from "./types/dbTypes.js";
 
 export class DBManager {
   private readonly client: DBClient;

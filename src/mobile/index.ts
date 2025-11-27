@@ -1,3 +1,3 @@
-export * from "./appium.config";
-export * from "./baseMobileTest";
-export * from "./capabilities";
+export * from "./appium.config.js";
+export * from "./baseMobileTest.js";
+export * from "./capabilities/index.js";

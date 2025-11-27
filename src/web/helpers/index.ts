@@ -1,2 +1,2 @@
-export * from "./elementHelper";
-export * from "./waitHelper";
+export * from "./elementHelper.js";
+export * from "./waitHelper.js";

@@ -1,5 +1,5 @@
 import { allure } from "allure-playwright";
-import { logger } from "../utils/logger";
+import { logger } from "../utils/logger.js";
 
 export function Step(name?: string) {
   return function (_target: unknown, propertyKey: string | symbol, descriptor: PropertyDescriptor) {

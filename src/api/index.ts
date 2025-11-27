@@ -1,2 +1,2 @@
-export * from "./apiClient";
-export * from "./schemaValidator";
+export * from "./apiClient.js";
+export * from "./schemaValidator.js";

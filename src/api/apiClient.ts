@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
-import { getQaEnvConfig } from "../utils/env";
-import { createScopedLogger } from "../utils/logger";
+import { getQaEnvConfig } from "../utils/env.js";
+import { createScopedLogger } from "../utils/logger.js";
 
 export class ApiClient {
   private readonly client: AxiosInstance;

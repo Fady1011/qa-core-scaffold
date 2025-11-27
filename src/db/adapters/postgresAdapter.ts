@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes";
+import type { DatabaseAdapter, DatabaseConfig, QueryParams, QueryResult } from "../types/dbTypes.js";
 
 export class PostgresAdapter implements DatabaseAdapter {
   private pool: Pool;

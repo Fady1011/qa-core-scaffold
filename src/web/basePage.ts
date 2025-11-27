@@ -1,7 +1,7 @@
 import type { Locator, Page } from "@playwright/test";
 import { allure } from "allure-playwright";
-import { Step } from "../decorators/step";
-import { createScopedLogger } from "../utils/logger";
+import { Step } from "../decorators/step.js";
+import { createScopedLogger } from "../utils/logger.js";
 
 export interface NavigationOptions {
   url: string;

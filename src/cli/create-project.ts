@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { Command } from "commander";
-import { copyTemplateDirectory, ensureDir, pathExists } from "../utils/fileHelper";
-import { logger } from "../utils/logger";
+import { copyTemplateDirectory, ensureDir, pathExists } from "../utils/fileHelper.js";
+import { logger } from "../utils/logger.js";
 
 const TEMPLATE_TYPES = ["web", "api", "mobile"] as const;
 type TemplateType = (typeof TEMPLATE_TYPES)[number];

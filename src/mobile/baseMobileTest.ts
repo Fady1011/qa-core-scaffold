@@ -1,6 +1,6 @@
 import { browser } from "@wdio/globals";
 import type { Browser } from "webdriverio";
-import { createScopedLogger } from "../utils/logger";
+import { createScopedLogger } from "../utils/logger.js";
 
 export abstract class BaseMobileTest {
   protected readonly log = createScopedLogger(this.constructor.name);
