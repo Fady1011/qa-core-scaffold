@@ -1,7 +1,10 @@
 import type { Options } from "@wdio/types";
 import path from "path";
+import { fileURLToPath } from "url";
 import { getQaEnvConfig } from "../utils/env.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const env = getQaEnvConfig();
 
 export const config: Options.Testrunner = {

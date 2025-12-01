@@ -39,4 +39,4 @@ Follow one track (web, api, mobile) and you are up and running.
 - API: `tests/api.playwright.spec.ts`; template at `templates/api/tests/api.spec.ts`.
 - Mobile: `tests/mobile/sample.test.ts`; template at `templates/mobile/tests/mobile.test.ts`.
 - DB: `tests/db.playwright.spec.ts` uses the mock adapter by default.
-- Bootstrap a new project: `npx qa create-project my-suite --type web|api|mobile` (templates live under `templates/*/tests`).
+- Bootstrap a new project: `npx qa create-project my-suite --type web|api|mobile|all` (`--append` to add another stack into an existing folder).

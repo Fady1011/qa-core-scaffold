@@ -1,6 +1,6 @@
 {
   "name": "@fady1011/qa-core",
-  "version": "0.3.2",
+  "version": "0.3.10",
   "description": "Reusable QA automation scaffold library for web, API, and mobile projects",
   "keywords": [
     "qa",

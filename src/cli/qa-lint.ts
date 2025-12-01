@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { Command } from "commander";
 
 interface GovernanceRules {
@@ -7,6 +8,9 @@ interface GovernanceRules {
   requiredScripts: string[];
   commitPrefixes: string[];
 }
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function loadRules(): GovernanceRules {
   const rulesPath = path.resolve(__dirname, "../governance/common.rules.json");
